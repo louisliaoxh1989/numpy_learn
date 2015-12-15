@@ -171,3 +171,41 @@ USA    200
 JP     NaN  #可以看到这里将data中没有的key键"JP"的值作为了NaN
 dtype: float64
 ```
+
+###使用单个数值作为data
+
+```python
+#coding=utf-8
+from pandas import Series
+import numpy as np
+
+#使用单个数值作为data
+#不指定index
+s=Series(1)
+print '查看index',s.index
+print '查看values',s.values
+print '查看Series'
+print s
+#指定index
+s=Series(1,['a','b','c'])
+print '查看index',s.index
+print '查看values',s.values
+print '查看Series'
+print s
+```
+>输出
+
+```
+查看index Int64Index([0], dtype='int64')
+查看values [1]
+查看Series
+0    1
+dtype: int64
+查看index Index([u'a', u'b', u'c'], dtype='object')
+查看values [1 1 1]
+查看Series
+a    1
+b    1
+c    1
+dtype: int64
+```
