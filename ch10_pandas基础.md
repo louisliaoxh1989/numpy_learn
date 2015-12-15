@@ -1,4 +1,4 @@
-[参考文章](#http://pandas.pydata.org/pandas-docs/stable/dsintro.html#dsintro)
+[参考文章](http://pandas.pydata.org/pandas-docs/stable/dsintro.html#dsintro)
 
 <Strong>[Series](#Series)</Strong>
 
