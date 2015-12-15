@@ -316,9 +316,9 @@ g    90
 
 ##创建DataFrame##
 
-###使用列表(list)创建###
+###使用字典列表(list)创建###
 
->示例：
+>示例1：使用一组字典组成的列表作为数据值(data)创建DataFrame
 
 ```python
 #coding=utf-8
@@ -343,7 +343,7 @@ data的数据类型: <type 'list'>
 ```
 ><Strong>从示例中可以看出以下两点
 
-(1). 指定了列索引colums时，得到的结果也会按指定的顺序('name','cp','age')
+(1). 指定了列索引colums时，得到的结果也会按指定的顺序('name','cp','age'),当指定columns时得到的值只会是columns指定的键对应的值，如果在原有data中没有该键则值设置为NaN
 
 (2). 没有指定index时，会创建[0,1,...len(data)]的行索引
 
@@ -383,3 +383,34 @@ df=DataFrame(data,index=np.arange(len(data)),columns=['name','cp'])
 >><Strong>可以看出当指定的columns长度比data键值少时，则在columns没有出现的键对应的值也不会出现</Strong>
 
 <Strong>总结：当指定columns时得到的值只会是columns指定的键对应的值，如果在原有data中没有该键则值设置为NaN</Strong>
+
+###使用值为Series的字典###
+
+>示例2：使用一组字典其值为Series类型创建DataFrame
+
+```python
+#coding=utf-8
+from pandas import Series,DataFrame
+import numpy as np
+#使用带Series字典型的
+data={"name":Series(["lxh", "xiao", "hua", "be"]),
+       "age":Series([20, 40, 4, 70,80]),
+       "cp":Series(["lm", "ly", "yry", "old"])
+      }
+print 'data的数据类型:',type(data)
+df=DataFrame(data,columns=['name','cp','age'])
+print df
+```
+>输出
+
+```
+data的数据类型: <type 'dict'>
+   name   cp  age
+0   lxh   lm   20
+1  xiao   ly   40
+2   hua  yry    4
+3    be  old   70
+4   NaN  NaN   80
+```
+<Strong>上面最有意思的是在设置data时的age的长度为5比name和cp的长度4不一样，也能创建成功，且将缺少的值都设置成为了NaN</Strong>
+
