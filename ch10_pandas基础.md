@@ -45,39 +45,42 @@ print '查看values',s.values
 print '查看Series'
 print s
 ```
->>输出:
 
->>查看index Int64Index([0, 1, 2, 3], dtype='int64')
+>输出:
 
->>查看values [1 2 3 4]
+```
+查看index Int64Index([0, 1, 2, 3], dtype='int64')
 
->>查看Series
+查看values [1 2 3 4]
 
->>0    1
+查看Series
 
->>1    2
+0    1
 
->>2    3
+1    2
 
->>3    4
+2    3
 
->>dtype: int64
+3    4
 
->>查看index Index([u'a', u'b', u'c', u'd'], dtype='object')
+dtype: int64
 
->>查看values [1 2 3 4]
+查看index Index([u'a', u'b', u'c', u'd'], dtype='object')
 
->>查看Series
+查看values [1 2 3 4]
 
->>a    1
+查看Series
 
->>b    2
+a    1
 
->>c    3
+b    2
 
->>d    4
+c    3
 
->>dtype: int64
+d    4
+
+dtype: int64
+```
 
 ><strong>示例2：使用ndarray做为data</strong>
 
