@@ -105,7 +105,7 @@ print '查看values',s.values
 print '查看Series'
 print s
 ```
->>输出:
+>输出:
 
 ```
 查看index Int64Index([0, 1, 2, 3], dtype='int64')
@@ -124,4 +124,46 @@ b    2
 c    3
 d    4
 dtype: int32
+```
+
+><strong>示例3：使用dict字典做为data</strong>
+
+```python
+#coding=utf-8
+from pandas import Series
+import numpy as np
+
+#使用字典作为ddata
+dic={'CHN':100,'USA':200}
+#不指定index
+s=Series(dic)
+print '查看index',s.index
+print '查看values',s.values
+print '查看Series'
+print s
+
+#指定index，且index中有原有data没有的key
+index=['CHN','USA','JP']
+s=Series(dic,index=index)
+print '查看index',s.index
+print '查看values',s.values
+print '查看Series'
+print s
+```
+>输出
+
+```
+查看index Index([u'CHN', u'USA'], dtype='object')
+查看values [100 200]
+查看Series
+CHN    100
+USA    200
+dtype: int64
+查看index Index([u'CHN', u'USA', u'JP'], dtype='object')
+查看values [ 100.  200.   nan]
+查看Series
+CHN    100
+USA    200
+JP     NaN  #可以看到这里将data中没有的key键"JP"的值作为了NaN
+dtype: float64
 ```
