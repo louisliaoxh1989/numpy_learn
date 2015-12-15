@@ -511,3 +511,26 @@ cp      old
 age      70
 Name: four, dtype: object
 ```
+###通过列索引取某一列(键)的数据###
+
+><Strong>语法：df[列索引值]</Strong>
+
+```python
+#coding=utf-8
+from pandas import Series,DataFrame
+import numpy as np
+data=[{"name":'lxh',"age":20,"cp":'lm'},{"name":'xiao',"age":40,"cp":'ly'},{"name":'hua',"age":4,"cp":'yry'},{"name":'be',"age":70,"cp":'old'}]
+df=DataFrame(data,index=np.arange(len(data)),columns=['name','cp','age'])
+print '通过列索引columns来获取某列如cp的数据\r\n',df["cp"]
+```
+>输出
+
+```
+通过列索引columns来获取某列如cp的数据
+0     lm
+1     ly
+2    yry
+3    old
+Name: cp, dtype: object
+```
+
