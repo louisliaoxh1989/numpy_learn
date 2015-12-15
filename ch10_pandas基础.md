@@ -299,8 +299,11 @@ g    90
 ><Strong>语法：DataFrame(data,index,columns)</Strong>
 
 >>
-```
 <Strong>data:可以是</Strong>
+
+>>
+
+```
 (1) Dict of 1D ndarrays, lists, dicts, or Series
 (2) 2-D numpy.ndarray
 (3) Structured or record ndarray
