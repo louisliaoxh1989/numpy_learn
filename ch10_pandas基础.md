@@ -318,6 +318,8 @@ g    90
 
 ###使用列表(list)创建###
 
+>示例：
+
 ```python
 #coding=utf-8
 from pandas import Series,DataFrame
@@ -329,5 +331,55 @@ print 'data的数据类型:',type(data)
 df=DataFrame(data,index=np.arange(len(data)),columns=['name','cp','age'])
 print df
 ```
+>输出
 
+```
+data的数据类型: <type 'list'>
+   name   cp  age
+0   lxh   lm   20
+1  xiao   ly   40
+2   hua  yry    4
+3    be  old   70
+```
+><Strong>从示例中可以看出以下两点
 
+(1). 指定了列索引colums时，得到的结果也会按指定的顺序('name','cp','age')
+
+(2). 没有指定index时，会创建[0,1,...len(data)]的行索引
+
+</Strong>
+
+><Strong>下面试着将columns中的元素增加一个sex，看看会有什么效果</Strong>
+
+```python
+df=DataFrame(data,index=np.arange(len(data)),columns=['name','cp','age',"sex"])
+```
+>输出
+
+```
+   name   cp  age  sex
+0   lxh   lm   20  NaN
+1  xiao   ly   40  NaN
+2   hua  yry    4  NaN
+3    be  old   70  NaN
+```
+>><Strong>可以看出当指定的columns长度大于data或在data中没有的键时，则多出的列索引(sex)的值为NaN</Strong>
+
+><Strong>下面试着将columns中的元素减少一个，比如age，看看会有什么效果</Strong>
+
+```python
+df=DataFrame(data,index=np.arange(len(data)),columns=['name','cp'])
+```
+>输出
+
+```
+   name   cp
+0   lxh   lm
+1  xiao   ly
+2   hua  yry
+3    be  old
+```
+
+>><Strong>可以看出当指定的columns长度比data键值少时，则在columns没有出现的键对应的值也不会出现</Strong>
+
+<Strong>总结：当指定columns时得到的值只会是columns指定的键对应的值，如果在原有data中没有该键则值设置为NaN</Strong>
