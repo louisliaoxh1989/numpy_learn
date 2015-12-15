@@ -1,3 +1,9 @@
+[Series](#Series)
+
+
+
+
+
 #Series
 
 <Strong>Series</Strong><em>是一种类似于一维数组的对象，它由一组数据(values)和一组与之相关的数据标签(index索引)组成，一个简
