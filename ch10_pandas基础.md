@@ -103,7 +103,7 @@ print '查看Series'
 print s
 ```
 >>输出:
->>
+
 ```
 查看index Int64Index([0, 1, 2, 3], dtype='int64')
 查看values [1 2 3 4]
