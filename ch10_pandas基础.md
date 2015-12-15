@@ -293,7 +293,7 @@ g    90
 #DataFrame
 
 1. <Strong>DataFrame</Strong>是一个表格型的数据结构，它包含一组有序的列，每列可以是不同数据类型的值。可以看成是一个电子表格或一个SQL数据表或由Series组成的字典。
-2. <Strong>DataFrame</Strong>既有行索引(columns)，也有列索引(index)
+2. <Strong>DataFrame</Strong>既有行索引(index)，也有列索引(columns)
 
 
 ><Strong>语法：DataFrame(data,index,columns)</Strong>
@@ -310,6 +310,10 @@ g    90
 (4)A Series
 (5) Another DataFrame
 ```
+><Strong>index:是设置行索引，如果要指定则最好与data长度相同</Strong>
+
+><Strong>columns:是设置列索引，如果要指定则最好与data长度相同，如不相同则会将值设为NaN</Strong>
+
 ##创建DataFrame##
 
 ###使用列表(list)创建###
