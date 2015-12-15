@@ -453,3 +453,61 @@ data的数据类型: <type 'dict'>
 2   hua  yry   12
 3    be  old   13
 ```
+
+##值选取##
+
+###通过(行)索引取某一行的数据###
+
+>语法：df.ix[值]
+
+>>如果创建时没有指定index则可取值为[0,...,某个键对应值的个数-1];
+
+  如果指定了index则值还可以是列表中的其中一个元素值
+
+>示例：
+
+```python
+#coding=utf-8
+from pandas import Series,DataFrame
+import numpy as np
+#使用list
+data=[{"name":'lxh',"age":20,"cp":'lm'},{"name":'xiao',"age":40,"cp":'ly'},{"name":'hua',"age":4,"cp":'yry'},{"name":'be',"age":70,"cp":'old'}]
+print 'data的数据类型:',type(data)
+df=DataFrame(data,index=np.arange(len(data)),columns=['name','cp','age'])
+print df
+print '通过(行)索引index获取第三行的数据\r\n',df.ix[2]
+
+df1=DataFrame(data,columns=['name','cp','age'],index=['one','two','three','four'])
+print df1
+print '通过(行)索引index获取第3行的数据\r\n',df1.ix[3]
+print '通过索引index获取第行索引值为four的数据\r\n',df1.ix['four']
+```
+>输出
+```
+data的数据类型: <type 'list'>
+   name   cp  age
+0   lxh   lm   20
+1  xiao   ly   40
+2   hua  yry    4
+3    be  old   70
+通过(行)索引index获取第三行的数据
+name    hua
+cp      yry
+age       4
+Name: 2, dtype: object
+       name   cp  age
+one     lxh   lm   20
+two    xiao   ly   40
+three   hua  yry    4
+four     be  old   70
+通过(行)索引index获取第3行的数据
+name     be
+cp      old
+age      70
+Name: four, dtype: object
+通过索引index获取第行索引值为four的数据
+name     be
+cp      old
+age      70
+Name: four, dtype: object
+```
