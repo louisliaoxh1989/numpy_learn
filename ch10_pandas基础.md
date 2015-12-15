@@ -384,7 +384,7 @@ df=DataFrame(data,index=np.arange(len(data)),columns=['name','cp'])
 
 <Strong>总结：当指定columns时得到的值只会是columns指定的键对应的值，如果在原有data中没有该键则值设置为NaN</Strong>
 
-###使用值为Series的字典###
+###使用值为Series的字典创建###
 
 >示例2：使用一组字典其值为Series类型创建DataFrame
 
@@ -414,3 +414,29 @@ data的数据类型: <type 'dict'>
 ```
 <Strong>上面最有意思的是在设置data时的age的长度为5比name和cp的长度4不一样，也能创建成功，且将缺少的值都设置成为了NaN</Strong>
 
+###使用类似序列结构的字典对象创建###
+
+>示例3：使用一个能够被转换成类似序列结构的字典对象来创建一个DataFrame
+
+```python
+#coding=utf-8
+from pandas import Series,DataFrame
+import numpy as np
+data={"name":Series(["lxh", "xiao", "hua", "be"]),
+       "age":np.arange(10,14),
+       "cp":["lm", "ly", "yry", "old"]
+      }
+print 'data的数据类型:',type(data)
+df=DataFrame(data,columns=['name','cp','age'])
+print df
+```
+>输出
+
+```
+data的数据类型: <type 'dict'>
+   name   cp  age
+0   lxh   lm   10
+1  xiao   ly   11
+2   hua  yry   12
+3    be  old   13
+```
