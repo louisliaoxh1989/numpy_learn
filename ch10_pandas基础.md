@@ -10,9 +10,11 @@
 
 <em>&nbsp;&nbsp;&nbsp;&nbsp;[使用dict字典做为data](#使用dict字典做为data)</em>
 
+<em>&nbsp;&nbsp;[Series值的选取](#Series值的选取)</em>
 
+<em>&nbsp;&nbsp;&nbsp;&nbsp;[通过下标、切片、条件选取](#通过下标、切片、条件选取)</em>
 
-
+<em>&nbsp;&nbsp;&nbsp;&nbsp;[通过索引值来选取](#通过索引值来选取)</em>
 
 #Series
 
@@ -224,4 +226,61 @@ a    1
 b    1
 c    1
 dtype: int64
+```
+##Series值的选取
+
+##通过下标、切片、条件选取###
+
+Numpy中用于ndarray值的选取操作很多都可用于Series的值的选择，如单个下标、切片和条件等
+
+>示例
+
+```python
+#coding=utf-8
+from pandas import Series
+
+l=[-1, 2, 3, 10, 20, -20, 90]
+s=Series(l)
+#通过下标获取
+print '通过下标获取第2个元素',s[1]
+print '通过切片获取第1到第3个元素\r\n',s[0:3]
+print '通过条件选取大于0且小于30的元素\r\n',s[(s>0)&(s<30)]
+```
+>输出
+```
+通过下标获取第2个元素 2
+通过切片获取第1到第3个元素
+0   -1
+1    2
+2    3
+dtype: int64
+通过条件选取大于0且小于30的元素
+1     2
+2     3
+3    10
+4    20
+dtype: int64
+```
+
+###通过索引值来选取###
+
+<em>如果在创建时指定了index则可以使用index来选取值,这个与python中的字典选取值的操作类似</em>
+
+>示例
+
+```python
+#coding=utf-8
+from pandas import Series
+
+l=[-1, 2, 3, 10, 20, -20, 90]
+#通过索引值(相当于字典中的键值)
+index=['a','b','c','d','e','f','g']
+s=Series(l,index=index)
+print '取索引为f的元素值=',s['f']
+```
+>输出
+
+```
+取索引为f的元素值= -20
+
 ```
