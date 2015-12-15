@@ -323,7 +323,8 @@ g    90
 from pandas import Series,DataFrame
 import numpy as np
 #使用list
-data=[{"name":'lxh',"age":20,"cp":'lm'},{"name":'xiao',"age":40,"cp":'ly'},{"name":'hua',"age":4,"cp":'yry'},{"name":'be',"age":70,"cp":'old'}]
+data=[{"name":'lxh',"age":20,"cp":'lm'},{"name":'xiao',"age":40,"cp":'ly'},
+{"name":'hua',"age":4,"cp":'yry'},{"name":'be',"age":70,"cp":'old'}]
 print 'data的数据类型:',type(data)
 df=DataFrame(data,index=np.arange(len(data)),columns=['name','cp','age'])
 print df
