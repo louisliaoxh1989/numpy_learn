@@ -290,3 +290,36 @@ e    20
 f   -20
 g    90
 ```
+#DataFrame
+
+1. <Strong>DataFrame</Strong>是一个表格型的数据结构，它包含一组有序的列，每列可以是不同数据类型的值。可以看成是一个电子表格或一个SQL数据表或由Series组成的字典。
+2. <Strong>DataFrame</Strong>既有行索引(columns)，也有列索引(index)
+
+
+><Strong>语法：DataFrame(data,index,columns)</Strong>
+
+>>
+```
+<Strong>data:可以是</Strong>
+(1) Dict of 1D ndarrays, lists, dicts, or Series
+(2) 2-D numpy.ndarray
+(3) Structured or record ndarray
+(4)A Series
+(5) Another DataFrame
+```
+##创建DataFrame##
+
+###使用列表(list)创建###
+
+```python
+#coding=utf-8
+from pandas import Series,DataFrame
+import numpy as np
+#使用list
+data=[{"name":'lxh',"age":20,"cp":'lm'},{"name":'xiao',"age":40,"cp":'ly'},{"name":'hua',"age":4,"cp":'yry'},{"name":'be',"age":70,"cp":'old'}]
+print 'data的数据类型:',type(data)
+df=DataFrame(data,index=np.arange(len(data)),columns=['name','cp','age'])
+print df
+```
+
+
