@@ -310,9 +310,9 @@ g    90
 (4)A Series
 (5) Another DataFrame
 ```
-><Strong>index:是设置行索引，如果要指定则最好与data长度相同</Strong>
+>><Strong>index:是设置行索引，如果要指定则最好与data长度相同</Strong>
 
-><Strong>columns:是设置列索引，如果要指定则最好与data长度相同，如不相同则会将值设为NaN</Strong>
+>><Strong>columns:是设置列索引，如果要指定则最好与data长度相同，如不相同则会将值设为NaN</Strong>
 
 ##创建DataFrame##
 
