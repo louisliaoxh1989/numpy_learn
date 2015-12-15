@@ -78,3 +78,47 @@ print s
 >>d    4
 
 >>dtype: int64
+
+><strong>示例2：使用ndarray做为data</strong>
+
+```python
+#coding=utf-8
+from pandas import Series
+import numpy as np
+
+#使用列表做为data
+arr=np.array([1,2,3,4])
+#不指定index
+s=Series(arr)
+print '查看index',s.index
+print '查看values',s.values
+print '查看Series'
+print s
+#指定index
+index=['a','b','c','d']
+s=Series(arr,index=index)
+print '查看index',s.index
+print '查看values',s.values
+print '查看Series'
+print s
+```
+>>输出:
+>>
+```
+查看index Int64Index([0, 1, 2, 3], dtype='int64')
+查看values [1 2 3 4]
+查看Series
+0    1
+1    2
+2    3
+3    4
+dtype: int32
+查看index Index([u'a', u'b', u'c', u'd'], dtype='object')
+查看values [1 2 3 4]
+查看Series
+a    1
+b    2
+c    3
+d    4
+dtype: int32
+```
