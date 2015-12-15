@@ -1,4 +1,14 @@
-[Series](#Series)
+<Strong>[Series](#Series)</Strong>
+
+<em>&nbsp;&nbsp;[index与data的对应](#index与data的对应)</em>
+
+<em>&nbsp;&nbsp;[创建Series](#创建Series)</em>
+
+<em>&nbsp;&nbsp;&nbsp;&nbsp;[使用列表做为data](#使用列表做为data)</em>
+
+<em>&nbsp;&nbsp;&nbsp;&nbsp;[使用ndarray做为data](#使用ndarray做为data)</em>
+
+<em>&nbsp;&nbsp;&nbsp;&nbsp;[使用dict字典做为data](#使用dict字典做为data)</em>
 
 
 
