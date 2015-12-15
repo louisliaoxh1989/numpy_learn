@@ -18,6 +18,17 @@
 
 <em>&nbsp;&nbsp;&nbsp;&nbsp;[通过索引值来选取](#通过索引值来选取)</em>
 
+<Strong>[DataFrame](#DataFrame)</Strong>
+
+<em>&nbsp;&nbsp;[创建DataFrame](#创建DataFrame)</em>
+
+<em>&nbsp;&nbsp;&nbsp;&nbsp;[使用值为Series的字典创建](#使用值为Series的字典创建)</em>
+
+<em>&nbsp;&nbsp;&nbsp;&nbsp;[使用字典列表(list)创建](#使用字典列表(list)创建)</em>
+
+<em>&nbsp;&nbsp;&nbsp;&nbsp;[使用类似序列结构的字典对象创建](#使用类似序列结构的字典对象创建)</em>
+
+
 #Series
 
 <Strong>Series</Strong><em>是一种类似于一维数组的对象，它由一组数据(values)和一组与之相关的数据标签(index索引)组成，一个简
@@ -290,7 +301,7 @@ e    20
 f   -20
 g    90
 ```
-#DataFrame
+#DataFrame#
 
 1. <Strong>DataFrame</Strong>是一个表格型的数据结构，它包含一组有序的列，每列可以是不同数据类型的值。可以看成是一个电子表格或一个SQL数据表或由Series组成的字典。
 2. <Strong>DataFrame</Strong>既有行索引(index)，也有列索引(columns)
