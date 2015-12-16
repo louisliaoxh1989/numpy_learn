@@ -456,13 +456,13 @@ data的数据类型: <type 'dict'>
 
 ##值选取##
 
-###通过(行)索引取某一行的数据###
+###通过(行)索引取行的数据###
 
 ><Strong>语法：df.ix[值]</Strong>
 
->>如果创建时没有指定index则可取值为[0,...,某个键对应值的个数-1]
+>>如果创建时没有指定index则可取值为[0,...,某个键对应值的个数-1]中的单个值来取某一行或者使用切片的形式来取多行的数据
 
->>如果指定了index则值还可以是列表中的其中一个元素值
+>>如果指定了index则值还可以是列表中的其中一个元素值来取某一行或者使用列表来取多行的数据
 
 >示例：
 
@@ -480,7 +480,9 @@ print '通过(行)索引index获取第三行的数据\r\n',df.ix[2]
 df1=DataFrame(data,columns=['name','cp','age'],index=['one','two','three','four'])
 print df1
 print '通过(行)索引index获取第3行的数据\r\n',df1.ix[3]
-print '通过索引index获取第行索引值为four的数据\r\n',df1.ix['four']
+print '通过索引的切片方式获取第1行到第3的的数据\r\n',df1.ix[0:3]
+print '通过索引index获取索引值为four的数据\r\n',df1.ix['four']
+print '通过索引index的列表来获取索引值为three以及four的行数据\r\n',df1.ix[['three','four']]
 ```
 >输出
 ```
@@ -505,11 +507,20 @@ name     be
 cp      old
 age      70
 Name: four, dtype: object
-通过索引index获取第行索引值为four的数据
+通过索引的切片方式获取第1行到第3的的数据
+       name   cp  age
+one     lxh   lm   20
+two    xiao   ly   40
+three   hua  yry    4
+通过索引index获取索引值为four的数据
 name     be
 cp      old
 age      70
 Name: four, dtype: object
+通过索引index的列表来获取索引值为three以及four的行数据
+      name   cp  age
+three  hua  yry    4
+four    be  old   70
 ```
 ###通过列索引取某一列(键)的数据###
 
