@@ -28,6 +28,8 @@
 
 <em>&nbsp;&nbsp;&nbsp;&nbsp;[使用类似序列结构的字典对象创建](#使用类似序列结构的字典对象创建)</em>
 
+<em>&nbsp;&nbsp;行以及列属性选取(#行以及列属性选取)</em>
+
 <em>&nbsp;&nbsp;[值选取](#值选取)</em>
 
 <em>&nbsp;&nbsp;&nbsp;&nbsp;[通过(行)索引取行的数据](#通过(行)索引取行的数据)</em>
@@ -460,6 +462,27 @@ data的数据类型: <type 'dict'>
 1  xiao   ly   11
 2   hua  yry   12
 3    be  old   13
+```
+
+##行以及列属性选取##
+
+```python
+#coding=utf-8
+from pandas import Series,DataFrame
+import numpy as np
+#使用list
+data=[{"name":'lxh',"age":20,"cp":'lm'},{"name":'xiao',"age":40,"cp":'ly'},{"name":'hua',"age":4,"cp":'yry'},{"name":'be',"age":70,"cp":'old'}]
+print 'data的数据类型:',type(data)
+df=DataFrame(data,index=np.arange(len(data)),columns=['name','cp','age'])
+print '获取DataFrame的行数=',len(df)
+print '获取DataFrame的列数=',df.columns.size;
+print '获取DataFram的元素个数=',df.size
+```
+>输出 
+```
+获取DataFrame的行数= 4
+获取DataFrame的列数= 3
+获取DataFram的元素个数= 12
 ```
 
 ##值选取##
