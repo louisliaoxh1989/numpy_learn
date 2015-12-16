@@ -648,5 +648,7 @@ data的数据类型: <type 'list'>
 2    4   hua
 ```
 
+<Strong>更多详细的操作，移步[官网](http://pandas.pydata.org/pandas-docs/stable/indexing.html)</Strong>
+
 ##基本操作##
 
