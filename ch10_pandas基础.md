@@ -28,6 +28,14 @@
 
 <em>&nbsp;&nbsp;&nbsp;&nbsp;[使用类似序列结构的字典对象创建](#使用类似序列结构的字典对象创建)</em>
 
+<em>&nbsp;&nbsp;[值选取](#值选取)</em>
+
+<em>&nbsp;&nbsp;&nbsp;&nbsp;[通过(行)索引取行的数据](#通过(行)索引取行的数据)</em>
+
+<em>&nbsp;&nbsp;&nbsp;&nbsp;[通过列索引取列(键)的数据](#通过列索引取列(键)的数据)</em>
+
+<em>&nbsp;&nbsp;&nbsp;&nbsp;[通过行及列索引精确获取数据](#通过行及列索引精确获取数据)</em>
+
 
 #Series
 
@@ -460,7 +468,8 @@ data的数据类型: <type 'dict'>
 
 ><Strong>语法：df.ix[值]</Strong>
 
->><B>如果创建时没有指定index则可取值为[0,...,某个键对应值的个数-1]中的单个值来取某一行或者使用切片的形式来取多行的数据</B>
+>><B>如果创建时没有指定index则可取值为[0,...,某个键对应值的个数-1]中的单个值来取某一行或者使用切片的形式来取多行的数据。要注意的是这
+里的切片是两头都包含的，比如[0:2]则会取0,1,2而不只是0,1</B>
 
 >><B>如果指定了index则值还可以是列表中的其中一个元素值来取某一行或者使用列表来取多行的数据</B>
 
@@ -522,7 +531,7 @@ Name: four, dtype: object
 three  hua  yry    4
 four    be  old   70
 ```
-###通过列索引取某一列(键)的数据###
+###通过列索引取列(键)的数据###
 
 ><Strong>语法：df[列索引值或由列索引值组成的列表]</Strong>
 
@@ -551,4 +560,32 @@ Name: cp, dtype: object
 1  xiao   40
 2   hua    4
 3    be   70
+```
+###通过行及列索引精确获取数据###
+
+```python
+#coding=utf-8
+from pandas import Series,DataFrame
+import numpy as np
+#使用list
+data=[{"name":'lxh',"age":20,"cp":'lm'},{"name":'xiao',"age":40,"cp":'ly'},{"name":'hua',"age":4,"cp":'yry'},{"name":'be',"age":70,"cp":'old'}]
+print 'data的数据类型:',type(data)
+df=DataFrame(data,index=np.arange(len(data)),columns=['name','cp','age'])
+print '通过行索引(在前)以及列索引(在后)精确获取数据如获取1到3行name列的值\r\n',df.ix[0:3]["name"].tolist()
+print '通过列索引(在前)以及行索引(在后)精确获取数据如获取1到3行name列的值\r\n',df["name"][0:4].tolist()
+```
+
+>输出
+
+```
+data的数据类型: <type 'list'>
+   name   cp  age
+0   lxh   lm   20
+1  xiao   ly   40
+2   hua  yry    4
+3    be  old   70
+通过行索引(在前)以及列索引(在后)精确获取数据如获取1到3行name列的值
+['lxh', 'xiao', 'hua', 'be']
+通过列索引(在前)以及行索引(在后)精确获取数据如获取1到3行name列的值
+['lxh', 'xiao', 'hua', 'be']
 ```
