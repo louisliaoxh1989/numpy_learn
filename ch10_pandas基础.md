@@ -460,9 +460,9 @@ data的数据类型: <type 'dict'>
 
 ><Strong>语法：df.ix[值]</Strong>
 
->>如果创建时没有指定index则可取值为[0,...,某个键对应值的个数-1]中的单个值来取某一行或者使用切片的形式来取多行的数据
+>><B>如果创建时没有指定index则可取值为[0,...,某个键对应值的个数-1]中的单个值来取某一行或者使用切片的形式来取多行的数据</B>
 
->>如果指定了index则值还可以是列表中的其中一个元素值来取某一行或者使用列表来取多行的数据
+>><B>如果指定了index则值还可以是列表中的其中一个元素值来取某一行或者使用列表来取多行的数据</B>
 
 >示例：
 
@@ -524,7 +524,8 @@ four    be  old   70
 ```
 ###通过列索引取某一列(键)的数据###
 
-><Strong>语法：df[列索引值]</Strong>
+><Strong>语法：df[列索引值或由列索引值组成的列表]</Strong>
+
 
 ```python
 #coding=utf-8
@@ -533,6 +534,7 @@ import numpy as np
 data=[{"name":'lxh',"age":20,"cp":'lm'},{"name":'xiao',"age":40,"cp":'ly'},{"name":'hua',"age":4,"cp":'yry'},{"name":'be',"age":70,"cp":'old'}]
 df=DataFrame(data,index=np.arange(len(data)),columns=['name','cp','age'])
 print '通过列索引columns来获取某列如cp的数据\r\n',df["cp"]
+print '通过列索引columns组成的列表来获取列name以及age的数据\r\n',df[['name','age']]
 ```
 >输出
 
@@ -543,5 +545,10 @@ print '通过列索引columns来获取某列如cp的数据\r\n',df["cp"]
 2    yry
 3    old
 Name: cp, dtype: object
+通过列索引columns组成的列表来获取列name以及age的数据
+   name  age
+0   lxh   20
+1  xiao   40
+2   hua    4
+3    be   70
 ```
-
