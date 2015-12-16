@@ -38,6 +38,9 @@
 
 <em>&nbsp;&nbsp;&nbsp;&nbsp;[通过行及列索引精确获取数据](#通过行及列索引精确获取数据)</em>
 
+<em>&nbsp;&nbsp;&nbsp;&nbsp;[通过loc方法精确获取数据](#通过loc方法精确获取数据)</em>
+
+<em>&nbsp;&nbsp;[基本操作](#基本操作)</em>
 
 #Series
 
@@ -612,3 +615,38 @@ data的数据类型: <type 'list'>
 通过列索引(在前)以及行索引(在后)精确获取数据如获取1到3行name列的值
 ['lxh', 'xiao', 'hua', 'be']
 ```
+###通过loc方法精确获取数据###
+
+><Strong>语法：df.loc[行索引，列索引]</Strong>
+
+>> <B>行索引：可以是单个行索引值如0、切片值如0:2、行索引值组成的列表如[0,2]</B>
+
+>> 列索引：可是以单个列索引的值如age、列索引值组成的列表如['age','name']
+
+```python
+#coding=utf-8
+from pandas import Series,DataFrame
+import numpy as np
+#使用list
+data=[{"name":'lxh',"age":20,"cp":'lm'},{"name":'xiao',"age":40,"cp":'ly'},{"name":'hua',"age":4,"cp":'yry'},{"name":'be',"age":70,"cp":'old'}]
+print 'data的数据类型:',type(data)
+df=DataFrame(data,index=np.arange(len(data)),columns=['name','cp','age'])
+print '通过loc来获取某些行某些列的数据如获取1到3行name和age列的值\r\n',df.loc[0:2,['age','name']]
+```
+>输出
+```
+data的数据类型: <type 'list'>
+   name   cp  age
+0   lxh   lm   20
+1  xiao   ly   40
+2   hua  yry    4
+3    be  old   70
+通过loc来获取某些行某些列的数据如获取1到3行name和age列的值
+   age  name
+0   20   lxh
+1   40  xiao
+2    4   hua
+```
+
+##基本操作##
+
