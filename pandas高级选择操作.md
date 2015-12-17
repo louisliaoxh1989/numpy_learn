@@ -81,3 +81,42 @@ Name: age, dtype: int64
   name  cp  age
 0  lxh  lm   20
 ```
+
+#通过isin(values)#
+
+>示例
+
+```python
+#coding=utf-8
+from pandas import Series,DataFrame
+import numpy as np
+data=[{"name":'lxh',"age":20,"cp":'lm'},{"name":'xiao',"age":40,"cp":'ly'},{"name":'hua',"age":4,"cp":'yry'},{"name":'be',"age":70,"cp":'old'}]
+df=DataFrame(data,columns=['name','cp','age'])
+print '原数据\r\n',df
+#使用isin(values)
+values={'name':['lxh','xiao']}
+#取得每行对应的布尔值
+index=df.isin(values).any(1)
+print '取得每行对应的布尔值\r\n',index
+print '选择name在[lxh，xiao]中的数据\r\n',df[index]
+```
+>输出 
+
+```
+原数据
+   name   cp  age
+0   lxh   lm   20
+1  xiao   ly   40
+2   hua  yry    4
+3    be  old   70
+取得每行对应的布尔值
+0     True
+1     True
+2    False
+3    False
+dtype: bool
+选择name在[lxh，xiao]中的数据
+   name  cp  age
+0   lxh  lm   20
+1  xiao  ly   40
+```
