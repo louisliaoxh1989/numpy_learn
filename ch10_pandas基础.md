@@ -32,6 +32,8 @@
 
 <em>&nbsp;&nbsp;[值选取](#值选取)</em>
 
+<em>&nbsp;&nbsp;&nbsp;&nbsp;[icol和irow方法使用整数值选取单行或单列](#icol和irow方法使用整数值选取单行或单列)</em>
+
 <em>&nbsp;&nbsp;&nbsp;&nbsp;[通过(行)索引取行的数据](#通过(行)索引取行的数据)</em>
 
 <em>&nbsp;&nbsp;&nbsp;&nbsp;[通过列索引取列(键)的数据](#通过列索引取列(键)的数据)</em>
@@ -492,6 +494,37 @@ print '获取DataFram的元素个数=',df.size
 
 ##值选取##
 
+
+###icol和irow方法使用整数值选取单行或单列###
+
+>示例：通过icol获取第1行的数据，通过irow获取第二列的数据
+
+```python
+#coding=utf-8
+from pandas import Series,DataFrame
+import numpy as np
+#使用list
+data=[{"name":'lxh',"age":20,"cp":'lm'},{"name":'xiao',"age":40,"cp":'ly'},{"name":'hua',"age":4,"cp":'yry'},{"name":'be',"age":70,"cp":'old'}]
+df=DataFrame(data,index=np.arange(len(data)),columns=['name','cp','age'])
+print df
+#通过icol获取第1行的数据，通过irow获取第二列的数据
+print '第1行的数据\r\n',df.icol(0).tolist()
+print '第2列的数据\r\n',df.irow(1).tolist()
+```
+>输出
+```
+   name   cp  age
+0   lxh   lm   20
+1  xiao   ly   40
+2   hua  yry    4
+3    be  old   70
+第1行的数据
+['lxh', 'xiao', 'hua', 'be']
+第2列的数据
+['xiao', 'ly', 40]
+```
+
+
 ###通过(行)索引取行的数据###
 
 ><Strong>语法：df.ix[值]</Strong>
@@ -683,5 +716,5 @@ print '通过iloc来获取某些行某些列的数据如获取1到3行name和age
 
 <Strong>更多详细的操作，移步[官网](http://pandas.pydata.org/pandas-docs/stable/indexing.html)</Strong>
 
-##基本操作##
+
 
