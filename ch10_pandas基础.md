@@ -40,6 +40,8 @@
 
 <em>&nbsp;&nbsp;&nbsp;&nbsp;[通过loc方法精确获取数据](#通过loc方法精确获取数据)</em>
 
+<em>&nbsp;&nbsp;&nbsp;&nbsp;[通过iloc方法通过位置精确获取数据](#通过iloc方法通过位置精确获取数据)</em>
+
 <em>&nbsp;&nbsp;[基本操作](#基本操作)</em>
 
 #Series
