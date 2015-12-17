@@ -2,7 +2,9 @@
 #coding=utf-8
 from pandas import Series,DataFrame
 import numpy as np
-data=[{"name":'lxh',"age":20,"cp":'lm'},{"name":'xiao',"age":40,"cp":'ly'},{"name":'hua',"age":4,"cp":'yry'},{"name":'be',"age":70,"cp":'old'},{"name":'hua1',"age":4,"cp":'yry'},{"name":'be2',"age":70,"cp":'old'}]
+data=[{"name":'lxh',"age":20,"cp":'lm'},{"name":'xiao',"age":40,"cp":'ly'},
+{"name":'hua',"age":4,"cp":'yry'},{"name":'be',"age":70,"cp":'old'},
+{"name":'hua1',"age":4,"cp":'yry'},{"name":'be2',"age":70,"cp":'old'}]
 df=DataFrame(data,columns=['name','cp','age'])
 print '原数据\r\n',df
 ```
