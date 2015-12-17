@@ -647,6 +647,37 @@ data的数据类型: <type 'list'>
 1   40  xiao
 2    4   hua
 ```
+###通过iloc方法通过位置精确获取数据###
+
+><Strong>语法：df.iloc[行索引，列索引]</Strong>
+
+>>行与列索引可以是单独的一个数字、数字组成的列表如[1,3,5]、切片如[0:3]
+
+>示例:通过iloc来获取某些行某些列的数据如获取1到3行name和age列的值
+
+```python
+#coding=utf-8
+from pandas import Series,DataFrame
+import numpy as np
+#使用list
+data=[{"name":'lxh',"age":20,"cp":'lm'},{"name":'xiao',"age":40,"cp":'ly'},{"name":'hua',"age":4,"cp":'yry'},{"name":'be',"age":70,"cp":'old'}]
+df=DataFrame(data,index=np.arange(len(data)),columns=['name','cp','age'])
+print df
+print '通过iloc来获取某些行某些列的数据如获取1到3行name和age列的值\r\n',df.iloc[0:2,[2,0]]
+```
+>输出
+
+```
+   name   cp  age
+0   lxh   lm   20
+1  xiao   ly   40
+2   hua  yry    4
+3    be  old   70
+通过iloc来获取某些行某些列的数据如获取1到3行name和age列的值
+   age  name
+0   20   lxh
+1   40  xiao
+```
 
 <Strong>更多详细的操作，移步[官网](http://pandas.pydata.org/pandas-docs/stable/indexing.html)</Strong>
 
