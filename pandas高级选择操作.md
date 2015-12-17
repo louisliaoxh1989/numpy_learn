@@ -89,7 +89,7 @@ Name: age, dtype: int64
 0  lxh  lm   20
 ```
 
-#通过isin(values)#
+#通过isin#
 
 >示例
 
