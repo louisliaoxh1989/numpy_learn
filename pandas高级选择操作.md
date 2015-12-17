@@ -3,7 +3,7 @@
 
 <em>当需要使用多个条件组合时可以使用操作符 "|"、"&"、"~" 他们分别代表"或"、"与"以及"非",且每个条件都使用括号包括起来</em>
 
-##对于Series使用布尔向量选择数据##
+##对Series使用布尔向量选择数据##
 
 >示例：
 
@@ -32,4 +32,52 @@ print '选择所有不大于0的数据\r\n',s[~(s>0)].tolist()
 [-1, -20]
 ```
 
+##对DataFrame使用布尔向量选择数据##
 
+>示例
+
+```python
+#coding=utf-8
+from pandas import Series,DataFrame
+import numpy as np
+data=[{"name":'lxh',"age":20,"cp":'lm'},{"name":'xiao',"age":40,"cp":'ly'},{"name":'hua',"age":4,"cp":'yry'},{"name":'be',"age":70,"cp":'old'}]
+df=DataFrame(data,columns=['name','cp','age'])
+print '原数据\r\n',df
+
+#简单的
+print '所有age大于20的数据\r\n',df[(df["age"]>20)]
+print '所有age大于20且小于20的数据\r\n',df[(df["age"]>20) & (df["age"]<70)]
+
+#复杂的多条件
+
+#这里使用map将会提升过滤速度
+criterion = df['name'].map(lambda x: (x.startswith('x') | x.startswith('l')))
+print '所有name以字母x或l开头的age数据\r\n',df[criterion]['age']
+#多列过滤
+print '所有name以字母x或l开头且age小于40的数据\r\n',df[criterion & (df['age']<40)]
+
+```
+>输出 
+
+```
+原数据
+   name   cp  age
+0   lxh   lm   20
+1  xiao   ly   40
+2   hua  yry    4
+3    be  old   70
+所有age大于20的数据
+   name   cp  age
+1  xiao   ly   40
+3    be  old   70
+所有age大于20且小于20的数据
+   name  cp  age
+1  xiao  ly   40
+所有name以字母x或l开头的age数据
+0    20
+1    40
+Name: age, dtype: int64
+所有name以字母x或l开头且age小于40的数据
+  name  cp  age
+0  lxh  lm   20
+```
