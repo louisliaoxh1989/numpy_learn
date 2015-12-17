@@ -1,3 +1,10 @@
+<strong>目录</Strong>
+
+<B>[通过布尔向量选择过虑数据](#通过布尔向量选择过虑数据)</B>
+
+<B>[通过isin](#通过isin)</B>
+
+<B>[使用query](#使用query)</B>
 
 #通过布尔向量选择过虑数据#
 
@@ -133,5 +140,49 @@ import numpy as np
 data=[{"name":'lxh',"age":20,"cp":'lm'},{"name":'xiao',"age":40,"cp":'ly'},{"name":'hua',"age":4,"cp":'yry'},{"name":'be',"age":70,"cp":'old'}]
 df=DataFrame(data,columns=['name','cp','age'])
 print '原数据\r\n',df
+#使用query#
 print '所有age大于10且小于40的数据\r\n',df.query('10<age<40')
+
+print '选择name在[lxh，hua]中的数据\r\n',df.query('name==["lxh","hua"]')
+
+print '选择name在[lxh，hua]中的数据方法二\r\n',df.query('["lxh","hua"] in name')
+
+print '选择name不在[lxh，hua]中的数据\r\n',df.query('["lxh","hua"] not in name')
+
+print '选择name在[lxh，hua]中且age大于10的数据\r\n',df.query('name==["lxh","hua"] and age>10')
+
+print '选择name在[lxh，hua]中或age大于10的数据\r\n',df.query('name==["lxh","hua"] or age>10')
+```
+>输出 
+```
+原数据
+   name   cp  age
+0   lxh   lm   20
+1  xiao   ly   40
+2   hua  yry    4
+3    be  old   70
+所有age大于10且小于40的数据
+  name  cp  age
+0  lxh  lm   20
+选择name在[lxh，hua]中的数据
+  name   cp  age
+0  lxh   lm   20
+2  hua  yry    4
+选择name在[lxh，hua]中的数据方法二
+  name   cp  age
+0  lxh   lm   20
+2  hua  yry    4
+选择name不在[lxh，hua]中的数据
+   name   cp  age
+1  xiao   ly   40
+3    be  old   70
+选择name在[lxh，hua]中且age大于10的数据
+  name  cp  age
+0  lxh  lm   20
+选择name在[lxh，hua]中或age大于10的数据
+   name   cp  age
+0   lxh   lm   20
+1  xiao   ly   40
+2   hua  yry    4
+3    be  old   70
 ```
