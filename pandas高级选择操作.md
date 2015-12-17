@@ -123,8 +123,9 @@ dtype: bool
 
 #使用query#
 
-<em>query方法允许使用表达式的方法来选取数据；如你想选择列索引(标签)为"age"的大于10小于40的数据则可以使用query('10<age<40')</em>
+<em>query方法允许使用表达式的方法来选取数据；如你想选择列索引(标签)为"age"的大于10小于40的数据则可以使用</em>
 
+query("10<age<40")
 ```python
 #coding=utf-8
 from pandas import Series,DataFrame
