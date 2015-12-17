@@ -46,7 +46,7 @@ print '原数据\r\n',df
 
 #简单的
 print '所有age大于20的数据\r\n',df[(df["age"]>20)]
-print '所有age大于20且小于20的数据\r\n',df[(df["age"]>20) & (df["age"]<70)]
+print '所有age大于20且小于70的数据\r\n',df[(df["age"]>20) & (df["age"]<70)]
 
 #复杂的多条件
 
@@ -70,7 +70,7 @@ print '所有name以字母x或l开头且age小于40的数据\r\n',df[criterion &
    name   cp  age
 1  xiao   ly   40
 3    be  old   70
-所有age大于20且小于20的数据
+所有age大于20且小于70的数据
    name  cp  age
 1  xiao  ly   40
 所有name以字母x或l开头的age数据
@@ -119,4 +119,18 @@ dtype: bool
    name  cp  age
 0   lxh  lm   20
 1  xiao  ly   40
+```
+
+#使用query#
+
+<em>query方法允许使用表达式的方法来选取数据；如你想选择列索引(标签)为"age"的大于10小于40的数据则可以使用query('10<age<40')</em>
+
+```python
+#coding=utf-8
+from pandas import Series,DataFrame
+import numpy as np
+data=[{"name":'lxh',"age":20,"cp":'lm'},{"name":'xiao',"age":40,"cp":'ly'},{"name":'hua',"age":4,"cp":'yry'},{"name":'be',"age":70,"cp":'old'}]
+df=DataFrame(data,columns=['name','cp','age'])
+print '原数据\r\n',df
+print '所有age大于10且小于40的数据\r\n',df.query('10<age<40')
 ```
