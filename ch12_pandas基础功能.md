@@ -152,64 +152,64 @@ dtype: object
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">count</span></tt></td>
-<td>Number of non-null observations</td>
+<td>Number of non-null observations统计非NA值的个数</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">sum</span></tt></td>
-<td>Sum of values</td>
+<td>对某一轴上(axis=1或0)的值求合</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">mean</span></tt></td>
-<td>Mean of values</td>
+<td>对某一轴上(axis=1或0)的值求平均</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">mad</span></tt></td>
-<td>Mean absolute deviation</td>
+<td>根据平均值平均计算绝对离差</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">median</span></tt></td>
-<td>Arithmetic median of values</td>
+<td>值的算术中位数</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">min</span></tt></td>
-<td>Minimum</td>
+<td>某一轴上(axis=1或0)上的最小值</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">max</span></tt></td>
-<td>Maximum</td>
+<td>某一轴上(axis=1或0)上的最大值</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">mode</span></tt></td>
-<td>Mode</td>
+<td>除法</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">abs</span></tt></td>
-<td>Absolute Value</td>
+<td>绝对值</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">prod</span></tt></td>
 <td>Product of values</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">std</span></tt></td>
-<td>Unbiased standard deviation</td>
+<td>标准差</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">var</span></tt></td>
-<td>Unbiased variance</td>
+<td>方差</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">sem</span></tt></td>
-<td>Unbiased standard error of the mean</td>
+<td>平均数标准误差</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">skew</span></tt></td>
-<td>Unbiased skewness (3rd moment)</td>
+<td>偏度 (3rd moment三阶矩)</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">kurt</span></tt></td>
-<td>Unbiased kurtosis (4th moment)</td>
+<td>峰度 (4th moment四阶矩)</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">quantile</span></tt></td>
-<td>Sample quantile (value at %)</td>
+<td>分位数(value at %)</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">cumsum</span></tt></td>
-<td>Cumulative sum</td>
+<td>累计和</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">cumprod</span></tt></td>
-<td>Cumulative product</td>
+<td>累计积</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">cummax</span></tt></td>
-<td>Cumulative maximum</td>
+<td>累计最大值</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">cummin</span></tt></td>
-<td>Cumulative minimum</td>
+<td>累计最小值</td>
 </tr>
 </tbody>
 </table>
