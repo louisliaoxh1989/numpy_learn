@@ -101,10 +101,10 @@ d  NaN -10.0  -8.25
 
 #函数应用与映射#
 
-<em>有的情况下，需要将自己定义的函数或第三方函数应用到DataFrame的每行或每列上最张形成一个一维数组，这就需要用到<Strong>apply(func,axis)<Strong>方法</em>
+<em>有的情况下，需要将自己定义的函数或第三方函数应用到DataFrame的每行或每列上最张形成一个一维数组，这就需要用到<Strong>apply(func,axis)</Strong>方法</em>
 
 
-<em>有的情况下，需要将值中的数据格式进行转换如想得到每个值的格式化字符串，这就需要用到<Strong>applymap(func,axis)<Strong>方法</em>
+<em>有的情况下，需要将值中的数据格式进行转换如想得到每个值的格式化字符串，这就需要用到<Strong>applymap(func,axis)</Strong>方法</em>
 
 <em>更详细的参见[官方网站](http://pandas.pydata.org/pandas-docs/stable/basics.html#function-application)</em>
 
