@@ -140,6 +140,8 @@ dtype: object
 
 ##汇总和计算描述统计##
 
+###汇总###
+
 <table border="1" class="docutils">
 <colgroup>
 <col width="20%">
@@ -283,9 +285,35 @@ dtype: float64
 按列查看非NA的个数
 {'a': 2, 'c': 3, 'b': 3, 'd': 2}
 ```
+###计算描述统计###
 
+<em>使用<Strong>describe</Strong>可以一次性的产生多种数值统计如count,mean,max,min</em>
 
+>示例
+```python
+#coding=utf-8
+from pandas import Series,DataFrame
+df1 = DataFrame({'one':Series(np.array([1,-2.2,3.45]),index=['a', 'b', 'c']), 'two' : Series(np.array([2,4.2,-3.25,-5]), index=['a', 'b', 'c', 'd']),'three':Series(np.array([2,4.2,-3.25]), index=['b', 'c', 'd'])},columns=['one','two','three'])
+print '原数据\r\n',df1
+print '计算描述统计\r\n',df1.describe()
+```
+>输出
 
-
-
-
+```
+原数据
+    one   two  three
+a  1.00  2.00    NaN
+b -2.20  4.20   2.00
+c  3.45 -3.25   4.20
+d   NaN -5.00  -3.25
+计算描述统计
+            one       two     three
+count  3.000000  4.000000  3.000000
+mean   0.750000 -0.512500  0.983333
+std    2.833284  4.326349  3.827641
+min   -2.200000 -5.000000 -3.250000
+25%   -0.600000 -3.687500 -0.625000
+50%    1.000000 -0.625000  2.000000
+75%    2.225000  2.550000  3.100000
+max    3.450000  4.200000  4.200000
+```
