@@ -138,4 +138,78 @@ dtype: object
 {"user3":3,"user1":2,"user2":1}
 ```
 
+##汇总和计算描述统计##
 
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%">
+<col width="80%">
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Function</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">count</span></tt></td>
+<td>Number of non-null observations</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">sum</span></tt></td>
+<td>Sum of values</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">mean</span></tt></td>
+<td>Mean of values</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">mad</span></tt></td>
+<td>Mean absolute deviation</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">median</span></tt></td>
+<td>Arithmetic median of values</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">min</span></tt></td>
+<td>Minimum</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">max</span></tt></td>
+<td>Maximum</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">mode</span></tt></td>
+<td>Mode</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">abs</span></tt></td>
+<td>Absolute Value</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">prod</span></tt></td>
+<td>Product of values</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">std</span></tt></td>
+<td>Unbiased standard deviation</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">var</span></tt></td>
+<td>Unbiased variance</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">sem</span></tt></td>
+<td>Unbiased standard error of the mean</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">skew</span></tt></td>
+<td>Unbiased skewness (3rd moment)</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">kurt</span></tt></td>
+<td>Unbiased kurtosis (4th moment)</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">quantile</span></tt></td>
+<td>Sample quantile (value at %)</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">cumsum</span></tt></td>
+<td>Cumulative sum</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">cumprod</span></tt></td>
+<td>Cumulative product</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">cummax</span></tt></td>
+<td>Cumulative maximum</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">cummin</span></tt></td>
+<td>Cumulative minimum</td>
+</tr>
+</tbody>
+</table>
