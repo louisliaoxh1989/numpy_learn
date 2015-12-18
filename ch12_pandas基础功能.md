@@ -99,6 +99,40 @@ c  0.2  -6.5   0.95
 d  NaN -10.0  -8.25
 ```
 
+#函数应用与映射#
+
+<em>有的情况下，需要将自己定义的函数或第三方函数应用到DataFrame的每行或每列上最张形成一个一维数组，这就需要用到<Strong>apply(func,axis)<Strong>方法</em>
+
+>示例：计算每列上最大值与最小值之间的差值
+
+```python
+#coding=utf-8
+from pandas import Series,DataFrame
+import numpy as np
+import pandas as pd
+df1 = DataFrame({'one':Series(np.array([1,-2.2,3.45]),index=['a', 'b', 'c']), 'two' : Series(np.array([2,4.2,-3.25,-5]), index=['a', 'b', 'c', 'd']),'three':Series(np.array([2,4.2,-3.25]), index=['b', 'c', 'd'])},columns=['one','two','three'])
+print '原数据\r\n',df1
+#最大值减去最小值
+f=lambda x: x.max() - x.min()
+#在列索引中的每一列上计算出该列中最大值与早小值之间的差值
+print '各列上最大值与早小值之间的差值\r\n',df1.apply(f)
+```
+>输出
+
+```
+原数据
+    one   two  three
+a  1.00  2.00    NaN
+b -2.20  4.20   2.00
+c  3.45 -3.25   4.20
+d   NaN -5.00  -3.25
+各列上最大值与早小值之间的差值
+one      5.65
+two      9.20
+three    7.45
+dtype: float64
+```
+
 #聚合功能#
 
 ##Series唯一值及值计数##
