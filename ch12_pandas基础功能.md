@@ -213,3 +213,79 @@ dtype: object
 </tr>
 </tbody>
 </table>
+
+<em>Series和DataFrame都可以使用上面的方法，对于DataFrame可以指定axis来进行某一个轴(行或列)上的操作</em>
+
+>示例
+
+```python
+#coding=utf-8
+from pandas import Series,DataFrame
+df1 = DataFrame({'one':Series(np.array([1,-2.2,3.45]),index=['a', 'b', 'c']), 'two' : Series(np.array([2,4.2,-3.25,-5]), index=['a', 'b', 'c', 'd']),'three':Series(np.array([2,4.2,-3.25]), index=['b', 'c', 'd'])},columns=['one','two','three'])
+print '原数据\r\n',df1
+##求合sum
+print "按列进行求合\r\n",df1.sum(axis=0)
+print "按行进行求合\r\n",df1.sum(axis=1)
+##求平均
+print "按列进行平均\r\n",df1.mean(axis=0)
+print "按行进行平均\r\n",df1.mean(axis=1)
+#取最大值
+print '按列取最大值\r\n',df1.max()
+print '按行取最大值\r\n',df1.max(axis=1)
+#非NA的个数
+print '按列查看非NA的个数\r\n',df1.count().to_dict()
+print '按列查看非NA的个数\r\n',df1.count(axis=1).to_dict()
+```
+>输出 
+
+```
+原数据
+    one   two  three
+a  1.00  2.00    NaN
+b -2.20  4.20   2.00
+c  3.45 -3.25   4.20
+d   NaN -5.00  -3.25
+按列进行求合
+one      2.25
+two     -2.05
+three    2.95
+dtype: float64
+按行进行求合
+a    3.00
+b    4.00
+c    4.40
+d   -8.25
+dtype: float64
+按列进行平均
+one      0.750000
+two     -0.512500
+three    0.983333
+dtype: float64
+按行进行平均
+a    1.500000
+b    1.333333
+c    1.466667
+d   -4.125000
+dtype: float64
+按列取最大值
+one      3.45
+two      4.20
+three    4.20
+dtype: float64
+按行取最大值
+a    2.00
+b    4.20
+c    4.20
+d   -3.25
+dtype: float64
+按列查看非NA的个数
+{'three': 3, 'two': 4, 'one': 3}
+按列查看非NA的个数
+{'a': 2, 'c': 3, 'b': 3, 'd': 2}
+```
+
+
+
+
+
+
