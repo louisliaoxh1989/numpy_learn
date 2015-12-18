@@ -119,7 +119,7 @@ uniques=s1.unique()
 print '原有的Series\r\n',s1
 print '去重后的Series并按元素排列\r\n',np.sort(uniques)
 print '每个值及值出现的次数',s1.value_counts().to_dict()
-print '每个值及值出现的次数并按出现的次数排序\r\n',pd.value_counts(s1.values,sort=True).to_dict()
+print '每个值及值出现的次数并按出现的次数排序\r\n',pd.value_counts(s1.values,sort=True).to_json()
 ```
 >输出
 ```
@@ -135,7 +135,7 @@ dtype: object
 ['user1' 'user2' 'user3']
 每个值及值出现的次数 {'user2': 1, 'user3': 3, 'user1': 2}
 每个值及值出现的次数并按出现的次数排序
-{'user2': 1, 'user3': 3, 'user1': 2}
+{"user3":3,"user1":2,"user2":1}
 ```
 
 
