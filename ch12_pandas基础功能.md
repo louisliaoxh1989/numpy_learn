@@ -103,6 +103,39 @@ d  NaN -10.0  -8.25
 
 ##Series唯一值及值计数##
 
-<em>使用Series对象的unique()可以将重复的元素去掉</em>
+<em>使用Series对象的unique()可以将重复的元素去掉;使用Pandas的value_counts()则可以计算每个元素出现的次数</em>
+
+>示例
+
+```python
+#coding=utf-8
+from pandas import Series,DataFrame
+import numpy as np
+import pandas as pd
+#唯一值及值计数
+s1=Series(['user3','user1','user3','user2','user3','user1'])
+#去除重复的元素
+uniques=s1.unique()
+print '原有的Series\r\n',s1
+print '去重后的Series并按元素排列\r\n',np.sort(uniques)
+print '每个值及值出现的次数',s1.value_counts().to_dict()
+print '每个值及值出现的次数并按出现的次数排序\r\n',pd.value_counts(s1.values,sort=True).to_dict()
+```
+>输出
+```
+原有的Series
+0    user3
+1    user1
+2    user3
+3    user2
+4    user3
+5    user1
+dtype: object
+去重后的Series并按元素排列
+['user1' 'user2' 'user3']
+每个值及值出现的次数 {'user2': 1, 'user3': 3, 'user1': 2}
+每个值及值出现的次数并按出现的次数排序
+{'user2': 1, 'user3': 3, 'user1': 2}
+```
 
 
