@@ -103,7 +103,13 @@ d  NaN -10.0  -8.25
 
 <em>有的情况下，需要将自己定义的函数或第三方函数应用到DataFrame的每行或每列上最张形成一个一维数组，这就需要用到<Strong>apply(func,axis)<Strong>方法</em>
 
->示例：计算每列上最大值与最小值之间的差值
+
+<em>有的情况下，需要将值中的数据格式进行转换如想得到每个值的格式化字符串，这就需要用到<Strong>applymap(func,axis)<Strong>方法</em>
+
+<em>更详细的参见[官方网站](http://pandas.pydata.org/pandas-docs/stable/basics.html#function-application)</em>
+
+
+>示例1：计算每列上最大值与最小值之间的差值
 
 ```python
 #coding=utf-8
@@ -116,6 +122,9 @@ print '原数据\r\n',df1
 f=lambda x: x.max() - x.min()
 #在列索引中的每一列上计算出该列中最大值与早小值之间的差值
 print '各列上最大值与早小值之间的差值\r\n',df1.apply(f)
+#格式化每个值
+f1=lambda  x: '%.3f'%x
+print '格式化每个值\r\n',df1.applymap(f1)
 ```
 >输出
 
@@ -131,7 +140,17 @@ one      5.65
 two      9.20
 three    7.45
 dtype: float64
+格式化每个值
+      one     two   three
+a   1.000   2.000     nan
+b  -2.200   4.200   2.000
+c   3.450  -3.250   4.200
+d     nan  -5.000  -3.250
 ```
+
+
+
+
 
 #聚合功能#
 
