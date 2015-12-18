@@ -42,6 +42,73 @@ print "使用tail查看最后2行\r\n",df.tail(2)
 4  hua1  yry    4
 5   be2  old   70
 ```
+
+#排序操作#
+
+<em>对于Series若要对值进行排序可以使用<Strong>order(ascending=True or False)</Strong>方法来进行升序或降序排列</em>
+
+<em>对于DataFrame若要对值进行排序可以使用<Strong>sort(columns=['one','three'],ascending=False)</Strong>方法，按照一列或多个列的值来进行升序或降序排列</em>
+
+<em>对于DataFrame若要对列或行的索引值进行排序可以使用<Strong>sort_index(axis=0或1,ascending=False)</Strong>方法对DataFrame按列或行的索引值升序或降序排列</em>
+
+>示例
+
+```python
+#coding=utf-8
+from pandas import Series,DataFrame
+import numpy as np
+df1 = DataFrame({'one':Series(np.array([1,-2.2,1,2]),index=['a', 'b', 'c','d']), 'two' : Series(np.array([2,4.2,-3.25,-5]), index=['a', 'b', 'c', 'd']),'three':Series(np.array([2,2,4.2,-3.25]), index=['a','b', 'c', 'd'])},columns=['one','two','three'])
+print '原数据\r\n',df1
+#排序sort与order
+print '先以列one然后按列three的值进行升序排列\r\n',df1.sort(columns=['one','three'])
+print '先以列one然后按列three的值进行降序序排列\r\n',df1.sort(columns=['one','three'],ascending=False)
+print '在列索引的值按字典升序排列\r\n',df1.sort_index(axis=1)
+print '在列索引的值按字典降序排列\r\n',df1.sort_index(axis=1,ascending=False)
+#对Series，进行按值排序
+s=Series([1,-20,30,10],index=['a','b','c','d'])
+print '对Series进行按值升序排序\r\n',s.order()
+```
+>输出
+
+```
+原数据
+   one   two  three
+a  1.0  2.00   2.00
+b -2.2  4.20   2.00
+c  1.0 -3.25   4.20
+d  2.0 -5.00  -3.25
+先以列one然后按列three的值进行升序排列
+   one   two  three
+b -2.2  4.20   2.00
+a  1.0  2.00   2.00
+c  1.0 -3.25   4.20
+d  2.0 -5.00  -3.25
+先以列one然后按列three的值进行降序序排列
+   one   two  three
+d  2.0 -5.00  -3.25
+c  1.0 -3.25   4.20
+a  1.0  2.00   2.00
+b -2.2  4.20   2.00
+在列索引的值按字典升序排列
+   one  three   two
+a  1.0   2.00  2.00
+b -2.2   2.00  4.20
+c  1.0   4.20 -3.25
+d  2.0  -3.25 -5.00
+在列索引的值按字典降序排列
+    two  three  one
+a  2.00   2.00  1.0
+b  4.20   2.00 -2.2
+c -3.25   4.20  1.0
+d -5.00  -3.25  2.0
+对Series进行按值升序排序
+b   -20
+a     1
+d    10
+c    30
+dtype: int64
+```
+
 #算术运算与数据对齐#
 
 <em>pandas可以对不同索引的对象进行算术运算，并自动进行数据对齐。如进行相加时，如果存在不同的索引对，则结果的索引就是该索引对的并集<em>
