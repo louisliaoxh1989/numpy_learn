@@ -10,8 +10,7 @@ merge(left, right, how='inner', on=None, left_on=None, right_on=None,
       suffixes=('_x', '_y'), copy=True, indicator=False)
 ```
 
-```
-参数说明：
+>参数说明：
 
 1. left与right：两个不同的DataFrame
 
@@ -21,7 +20,6 @@ merge(left, right, how='inner', on=None, left_on=None, right_on=None,
 
 4. 
 
-```
 
 
 
@@ -34,7 +32,7 @@ merge(left, right, how='inner', on=None, left_on=None, right_on=None,
 
 ##内连接##
 
-<em>符合连接条件和查询条件的数据行，相当于数据库中的SQL语句 </em>
+<em>符合连接条件和查询条件的数据行，相当于数据库中的jion,示例SQL语句 </em>
 
 ```sql
 SELECT *
@@ -47,3 +45,27 @@ INNER JOIN df2
 SELECT *
 FROM df1,df2 where df1.key=df2.key
 ```
+
+##左连接##
+
+<em>符合连接条件和查询条件的数据行并返回左表中不符合连接条件单符合查询条件的数据行，相当于数据库中的left outer join,示例SQL语句 </em>
+```sql
+-- show all records from df1
+SELECT *
+FROM df1
+LEFT OUTER JOIN df2
+  ON df1.key = df2.key;
+```
+
+##左连接##
+
+<em>符合连接条件和查询条件的数据行并右表中不符合连接条件单符合查询条件的数据行，相当于数据库中的right outer join,示例SQL语句 </em>
+
+```sql
+-- show all records from df2
+SELECT *
+FROM df1
+RIGHT OUTER JOIN df2
+  ON df1.key = df2.key;
+```
+
