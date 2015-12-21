@@ -26,15 +26,10 @@ merge(left, right, how='inner', on=None, left_on=None, right_on=None,
 >参数说明：
 
 1. left与right：两个不同的DataFrame
-
 2. how：指的是合并(连接)的方式有[inner(内连接)](#内连接),[left(左外连接)](#左外连接),[right(右外连接)](#右外连接),[outer(全外连接)](#全外连接);默认为inner
-
 3. on : 指的是用于连接的列索引名称。必须存在右右两个DataFrame对象中，如果没有指定且其他参数也未指定则以两个DataFrame的列名交集做为连接键
-
 4. left_on：左则DataFrame中用作连接键的列名;这个参数中左右列名不相同，但代表的含义相同时非常有用。
-
 5. right_on：右则DataFrame中用作 连接键的列名
-
 6. left_index：使用左则DataFrame中的行索引做为连接键
 7. right_index：使用右则DataFrame中的行索引做为连接键
 8. sort：默认为True，将合并的数据进行排序。在大多数情况下设置为False可以提高性能
