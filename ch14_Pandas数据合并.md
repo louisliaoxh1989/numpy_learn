@@ -40,6 +40,7 @@ merge(left, right, how='inner', on=None, left_on=None, right_on=None,
 8. sort：默认为True，将合并的数据进行排序。在大多数情况下设置为False可以提高性能
 9. suffixes：字符串值组成的元组，用于指定当左右DataFrame存在相同列名时在列名后面附加的后缀名称，默认为('_x','_y')
 10. copy：默认为True,总是将数据复制到数据结构中；大多数情况下设置为False可以提高性能
+11. indicator：在 0.17.0中还增加了一个显示合并数据中来源情况；如只来自己于左边(left_only)、两者(both)
 
 
 
