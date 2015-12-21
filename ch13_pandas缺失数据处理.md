@@ -94,5 +94,28 @@ dtype: float64
 ```
 #滤除缺失数据#
 
-<Strong>对于Series和DataFrame都可以使用方法dropna()滤除缺失数据，且对于DataFrame还可以指定axis参数来滤除指定轴上的缺失数据；通常是将有缺失值的行或列去掉</Strong>
+<Strong>对于Series和DataFrame都可以使用方法dropna()滤除缺失数据，且对于DataFrame还可以指定axis参数来滤除指定轴上的缺失数据；通常是将有缺失值的行或列去掉。另外这个方法还包含一个参数inplace用来指定是否产生副本，默认为False即产生副本(不对原对象产生影响)</Strong>
+
+>示例
+
+```python
+df = DataFrame({'one':Series(np.array([1,-2.2,1]),index=['a', 'b', 'c']), 'two' : Series(np.array([2,4.2,-3.25,-5]), index=['a', 'b', 'c', 'd']),'three':Series(np.array([2,2,4.2,-3.25]), index=['a','b', 'c', 'd'])},columns=['one','two','three'])
+print '原值\r\n',df
+print '滤除缺失数据\r\n',df.dropna()
+```
+>输出
+
+```
+原值
+   one   two  three
+a  1.0  2.00   2.00
+b -2.2  4.20   2.00
+c  1.0 -3.25   4.20
+d  NaN -5.00  -3.25
+滤除缺失数据
+   one   two  three
+a  1.0  2.00    2.0
+b -2.2  4.20    2.0
+c  1.0 -3.25    4.2
+```
 
