@@ -290,8 +290,8 @@ from pandas import Series,DataFrame,concat
 
 df1 = DataFrame({'city': ['Chicago', 'San Francisco', 'New York City'], 'rank': range(1, 4)})
 df2 = DataFrame({'city': ['Chicago', 'Boston', 'Los Angeles'], 'rank': [1, 4, 5]})
-print concat([df1,df2]) #这里有重复的数据
-print '去重后\r\n',concat([df1,df2]).drop_duplicates()
+print concat([df1,df2],ignore_index=True) #这里有重复的数据
+print '去重后\r\n',concat([df1,df2],ignore_index=True).drop_duplicates()
 ```
 
 >输出
@@ -300,14 +300,14 @@ print '去重后\r\n',concat([df1,df2]).drop_duplicates()
 0        Chicago     1
 1  San Francisco     2
 2  New York City     3
-0        Chicago     1
-1         Boston     4
-2    Los Angeles     5
+3        Chicago     1
+4         Boston     4
+5    Los Angeles     5
 去重后
             city  rank
 0        Chicago     1
 1  San Francisco     2
 2  New York City     3
-1         Boston     4
-2    Los Angeles     5
+4         Boston     4
+5    Los Angeles     5
 ```
