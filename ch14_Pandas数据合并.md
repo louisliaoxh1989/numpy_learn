@@ -190,4 +190,4 @@ join(self, other, on=None, how='left', lsuffix='', rsuffix='',
              sort=False):
 ```
 
-*其中参数的意义与merge方法基本相同*
+*其中参数的意义与merge方法基本相同,只是join方法默认为左外连接how=left*
