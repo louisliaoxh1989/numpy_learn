@@ -191,3 +191,43 @@ join(self, other, on=None, how='left', lsuffix='', rsuffix='',
 ```
 
 *其中参数的意义与merge方法基本相同,只是join方法默认为左外连接how=left*
+
+>示例
+
+```python
+#coding=utf-8
+from pandas import Series,DataFrame,merge
+
+data=DataFrame([{"id":0,"name":'lxh',"age":20,"cp":'lm'},{"id":1,"name":'xiao',"age":40,"cp":'ly'},{"id":2,"name":'hua',"age":4,"cp":'yry'},{"id":3,"name":'be',"age":70,"cp":'old'}],index=['a','b','c','d'])
+data1=DataFrame([{"sex":0},{"sex":1},{"sex":2}],index=['a','b','e'])
+
+print '使用默认的左连接\r\n',data.join(data1)  #这里可以看出自动屏蔽了data中没有的index=e 那一行的数据
+print '使用右连接\r\n',data.join(data1,how="right") #这里出自动屏蔽了data1中没有index=c,d的那行数据；等价于data1.join(data)
+print '使用内连接\r\n',data.join(data1,how='inner')
+print '使用全外连接\r\n',data.join(data1,how='outer')
+```
+>输出
+```python
+使用默认的左连接
+   age   cp  id  name  sex
+a   20   lm   0   lxh    0
+b   40   ly   1  xiao    1
+c    4  yry   2   hua  NaN
+d   70  old   3    be  NaN
+使用右连接
+   age   cp  id  name  sex
+a   20   lm   0   lxh    0
+b   40   ly   1  xiao    1
+e  NaN  NaN NaN   NaN    2
+使用内连接
+   age  cp  id  name  sex
+a   20  lm   0   lxh    0
+b   40  ly   1  xiao    1
+使用全外连接
+   age   cp  id  name  sex
+a   20   lm   0   lxh    0
+b   40   ly   1  xiao    1
+c    4  yry   2   hua  NaN
+d   70  old   3    be  NaN
+e  NaN  NaN NaN   NaN    2
+```
