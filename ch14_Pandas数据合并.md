@@ -27,6 +27,9 @@ merge(left, right, how='inner', on=None, left_on=None, right_on=None,
 8. sort：默认为True，将合并的数据进行排序。在大多数情况下设置为False可以提高性能
 9. suffixes：字符串值组成的元组，用于指定当左右DataFrame存在相同列名时在列名后面附加的后缀名称，默认为('_x','_y')
 10. copy：默认为True,总是将数据复制到数据结构中；大多数情况下设置为False可以提高性能
+
+
+
 ##内连接##
 
 <em>符合连接条件和查询条件的数据行，相当于数据库中的jion,示例SQL语句 </em>
