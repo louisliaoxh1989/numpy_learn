@@ -231,3 +231,13 @@ c    4  yry   2   hua  NaN
 d   70  old   3    be  NaN
 e  NaN  NaN NaN   NaN    2
 ```
+
+#concat#
+
+<em>concat方法相当于数据库中的全连接,可以指定按某个轴进行连接,也可以指定连接的方式join(outer,inner 只有这两种)</em>
+
+```python
+ concat(objs, axis=0, join='outer', join_axes=None, ignore_index=False,
+           keys=None, levels=None, names=None, verify_integrity=False, copy=True):
+```
+
