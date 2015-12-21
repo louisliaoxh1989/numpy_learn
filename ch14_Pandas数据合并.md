@@ -10,6 +10,9 @@
 
 <em>&nbsp;&nbsp;[示例](#示例)</em>
 
+<B>[join](#join)</B>
+
+<B>[concat](#concat)</B>
 
 #merage#
 
