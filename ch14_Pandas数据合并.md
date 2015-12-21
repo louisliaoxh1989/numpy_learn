@@ -244,6 +244,42 @@ e  NaN  NaN NaN   NaN    2
            keys=None, levels=None, names=None, verify_integrity=False, copy=True):
 ```
 
+>参数说明
+
+Parameters
+
+    ----------
+    objs : a sequence or mapping of Series, DataFrame, or Panel objects
+        If a dict is passed, the sorted keys will be used as the `keys`
+        argument, unless it is passed, in which case the values will be
+        selected (see below). Any None objects will be dropped silently unless
+        they are all None in which case a ValueError will be raised
+    axis : {0, 1, ...}, default 0
+        The axis to concatenate along
+    join : {'inner', 'outer'}, default 'outer'
+        How to handle indexes on other axis(es)
+    join_axes : list of Index objects
+        Specific indexes to use for the other n - 1 axes instead of performing
+        inner/outer set logic
+    verify_integrity : boolean, default False
+        Check whether the new concatenated axis contains duplicates. This can
+        be very expensive relative to the actual data concatenation
+    keys : sequence, default None
+        If multiple levels passed, should contain tuples. Construct
+        hierarchical index using the passed keys as the outermost level
+    levels : list of sequences, default None
+        Specific levels (unique values) to use for constructing a
+        MultiIndex. Otherwise they will be inferred from the keys
+    names : list, default None
+        Names for the levels in the resulting hierarchical index
+    ignore_index : boolean, default False
+        If True, do not use the index values along the concatenation axis. The
+        resulting axis will be labeled 0, ..., n - 1. This is useful if you are
+        concatenating objects where the concatenation axis does not have
+        meaningful indexing information. Note the the index values on the other
+        axes are still respected in the join.
+    copy : boolean, default True
+        If False, do not copy data unnecessarily
 
 
 >示例
