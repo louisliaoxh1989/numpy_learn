@@ -18,7 +18,11 @@ merge(left, right, how='inner', on=None, left_on=None, right_on=None,
 
 3. on : 指的是用于连接的列索引名称。必须存在右右两个DataFrame对象中，如果没有指定且其他参数也未指定则以两个DataFrame的列名交集做为连接键
 
-4. 
+4. left_on：左则DataFrame中用作连接键的列名
+
+5. right_on：右则DataFrame中用作 连接键的列名
+
+6. 
 
 
 
