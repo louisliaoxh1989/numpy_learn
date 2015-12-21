@@ -23,3 +23,7 @@
 [pandas基础](/ch10_pandas基础.md)
 
 [pandas值选择与过滤(高级)](/ch11_pandas高级选择操作.md)
+
+[pandas基础功能](/ch12_pandas基础功能.md)
+
+[pandas缺失数据处理](/ch13_pandas缺失数据处理.md)
