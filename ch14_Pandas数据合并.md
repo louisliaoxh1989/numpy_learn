@@ -14,7 +14,7 @@ merge(left, right, how='inner', on=None, left_on=None, right_on=None,
 
 1. left与right：两个不同的DataFrame
 
-2. how：指的是合并(连接)的方式，有[inner(内连接)](#内连接),outer(外连接),left(左连接),right(右连接);默认为inner
+2. how：指的是合并(连接)的方式有[inner(内连接)](#内连接),[left(左外连接)](#左外连接),[right(右外连接)](#右外连接),[outer(全外连接)](#全外连接);默认为inner
 
 3. on : 指的是用于连接的列索引名称。必须存在右右两个DataFrame对象中，如果没有指定且其他参数也未指定则以两个DataFrame的列名交集做为连接键
 
@@ -46,7 +46,7 @@ SELECT *
 FROM df1,df2 where df1.key=df2.key
 ```
 
-##左连接##
+##左外连接##
 
 <em>符合连接条件和查询条件的数据行并返回左表中不符合连接条件单符合查询条件的数据行，相当于数据库中的left outer join,示例SQL语句 </em>
 ```sql
@@ -57,7 +57,7 @@ LEFT OUTER JOIN df2
   ON df1.key = df2.key;
 ```
 
-##左连接##
+##右外连接##
 
 <em>符合连接条件和查询条件的数据行并右表中不符合连接条件单符合查询条件的数据行，相当于数据库中的right outer join,示例SQL语句 </em>
 
