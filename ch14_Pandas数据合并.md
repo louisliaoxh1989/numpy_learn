@@ -234,7 +234,7 @@ e  NaN  NaN NaN   NaN    2
 
 #concat#
 
-<em>concat方法相当于数据库中的全连接(UNION ALL),可以指定按某个轴进行连接,也可以指定连接的方式join(outer,inner 只有这两种)。与数据库不同的时concat不会去重，要达到去重的效果可以使用drop_duplicates方法</em>
+<em>concat方法相当于数据库中的全连接(UNION ALL),可以指定按某个轴进行连接,也可以指定连接的方式join(outer,inner 只有这两种)。***与数据库不同的时concat不会去重，要达到去重的效果可以使用drop_duplicates方法***</em>
 
 ```python
  concat(objs, axis=0, join='outer', join_axes=None, ignore_index=False,
