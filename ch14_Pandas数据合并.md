@@ -46,6 +46,13 @@ SELECT *
 FROM df1,df2 where df1.key=df2.key
 ```
 
+<em>对应pandas语句</em>
+
+```python
+pd.merge(df1, df2, on='key')
+```
+
+
 ##左外连接##
 
 <em>符合连接条件和查询条件的数据行并返回左表中不符合连接条件单符合查询条件的数据行，相当于数据库中的left outer join,示例SQL语句 </em>
@@ -57,9 +64,15 @@ LEFT OUTER JOIN df2
   ON df1.key = df2.key;
 ```
 
+<em>对应pandas语句</em>
+
+```python
+pd.merge(df1, df2, on='key', how='left')
+```
+
 ##右外连接##
 
-<em>符合连接条件和查询条件的数据行并右表中不符合连接条件单符合查询条件的数据行，相当于数据库中的right outer join,示例SQL语句 </em>
+<em>符合连接条件和查询条件的数据行并返回右表中不符合连接条件单符合查询条件的数据行，相当于数据库中的right outer join,示例SQL语句 </em>
 
 ```sql
 -- show all records from df2
@@ -68,4 +81,27 @@ FROM df1
 RIGHT OUTER JOIN df2
   ON df1.key = df2.key;
 ```
+<em>对应pandas语句</em>
 
+```python
+pd.merge(df1, df2, on='key', how='right')
+```
+
+
+##全外连接##
+
+<em>符合连接条件和查询条件的数据行并返回左表和左表中不符合连接条件单符合查询条件的数据行。全外连接相当于左外连接与左外连接的合集(去掉重复),相当于数据库中的full outer join,示例SQL语句 </em>
+
+```sql
+-- show all records from both tables
+SELECT *
+FROM df1
+FULL OUTER JOIN df2
+  ON df1.key = df2.key;
+```
+<em>对应pandas语句</em>
+
+```python
+pd.merge(df1, df2, on='key', how='outer')
+```
+***更详细的参见[官方网站](http://pandas.pydata.org/pandas-docs/stable/comparison_with_sql.html#compare-with-sql-join)***
