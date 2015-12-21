@@ -92,3 +92,7 @@ dtype: float64
 2    3
 3    1
 ```
+#滤除缺失数据#
+
+<Strong>对于Series和DataFrame都可以使用方法dropna()滤除缺失数据，且对于DataFrame还可以指定axis参数来滤除指定轴上的缺失数据；通常是将有缺失值的行或列去掉</Strong>
+
