@@ -180,3 +180,12 @@ print "使用left_on与right_on来指定列名字不同的连接键\r\n",merge(d
    age  cp  id name  cs  mid mname
 0   20  lm   0  lxh  10    0   lxh
 ```
+
+#join#
+
+<em>join方法提供了一个简便的方法用于将两个DataFrame中的不同的列索引合并成为一个DataFrame</em>
+
+```python
+join(self, other, on=None, how='left', lsuffix='', rsuffix='',
+             sort=False):
+```
