@@ -1,3 +1,12 @@
+<B>[merage](#merage)</B>
+
+<em>&nbsp;&nbsp;[内连接](#内连接)</em>
+
+<em>&nbsp;&nbsp;[左外连接](#左外连接)</em>
+
+<em>&nbsp;&nbsp;[右外连接](#右外连接)</em>
+
+<em>&nbsp;&nbsp;[全外连接](#全外连接)</em>
 #merage#
 
 <em>pandas提供了一个类似于关系数据库的连接(join)操作的方法<Strong>merage</Strong>,可以根据一个或多个键将不同DataFrame中的行连接起来</em>
