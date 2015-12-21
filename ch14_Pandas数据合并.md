@@ -189,3 +189,5 @@ print "使用left_on与right_on来指定列名字不同的连接键\r\n",merge(d
 join(self, other, on=None, how='left', lsuffix='', rsuffix='',
              sort=False):
 ```
+
+*其中参数的意义与merge方法基本相同*
